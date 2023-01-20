@@ -1,8 +1,8 @@
 ﻿namespace tech_test_payment_api.Models
 {
-    public class ItemPedido
+    public class ItemVenda
     {
-        public ItemPedido(Guid idVenda, Guid idProduto, int quantidade, decimal valor)
+        public ItemVenda(Guid idVenda, Guid idProduto, int quantidade, decimal valor)
         {
             Id = Guid.NewGuid();
             IdVenda = idVenda;
