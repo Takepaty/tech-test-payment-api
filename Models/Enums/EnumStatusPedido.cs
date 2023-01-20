@@ -13,6 +13,6 @@ namespace tech_test_payment_api.Models.Enums
         [Description("Entregue")]
         Entregue,
         [Description("Cancelada")]
-        Cancelado
+        Cancelada
     }
 }
