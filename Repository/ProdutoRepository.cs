@@ -1,4 +1,5 @@
 ﻿using tech_test_payment_api.Models;
+using tech_test_payment_api.Repository.Interfaces;
 
 namespace tech_test_payment_api.Repository
 {
@@ -19,6 +20,11 @@ namespace tech_test_payment_api.Repository
             {
                 throw new ArgumentNullException("item");
             }
+            if(produto.Any(p => p.Nome == item.Nome))
+            {
+                throw new Exception("Este produto já foi cadastrado!");
+            }
+
             produto.Add(item);
             return item;
         }

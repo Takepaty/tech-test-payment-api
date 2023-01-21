@@ -2,7 +2,7 @@
 {
     public class Produto
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
         public string Nome { get; private set; }
         public decimal Valor { get; private set; }
 
@@ -13,10 +13,5 @@
             Valor = valor;
         }
 
-        public void Alterar(Produto produto)
-        {
-            Nome = produto.Nome;
-            Valor = produto.Valor;
-        }
     }
 }

@@ -11,11 +11,11 @@
             Telefone = telefone;
         }
 
-        private Guid Id { get; set; }
-        private string Cpf { get; set; }
-        private string Nome { get; set; }
-        private string Email { get; set; }
-        private string Telefone { get; set; }
+        public Guid Id { get; set; }
+        public string Cpf { get; set; }
+        public string Nome { get; set; }
+        public string Email { get; set; }
+        public string Telefone { get; set; }
 
     }
 }
