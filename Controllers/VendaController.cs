@@ -4,6 +4,7 @@ using tech_test_payment_api.Repository;
 using tech_test_payment_api.Repository.Interfaces;
 using tech_test_payment_api.Services;
 using tech_test_payment_api.Services.Interfaces;
+using tech_test_payment_api.ViewModel;
 
 namespace tech_test_payment_api.Controllers
 {
@@ -22,9 +23,9 @@ namespace tech_test_payment_api.Controllers
 
 
         [Route("RegistrarVenda"), HttpPost]
-        public Venda Criar(Guid idVendedor, List<ItemVenda> listaItensVenda)
+        public Venda RegistrarVenda(RegistrarVendaViewModel venda)
         {
-            return service.RegistrarVenda(idVendedor, listaItensVenda);
+            return service.RegistrarVenda(venda);
         }
 
     }
