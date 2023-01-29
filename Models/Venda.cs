@@ -6,33 +6,23 @@ namespace tech_test_payment_api.Models
     {
 
         public Guid Id { get; private set; }  
-        public Guid IdVendedor { get; set; }
         public DateTime Data { get; private set; }
         public EnumStatusPedido StatusPedido { get; private set; }
+        public decimal ValorTotal { get; set; }
 
-        
         public List<ItemVenda> listaItensVenda { get; private set; }        
-        public Vendedor Vendedor { get; private set; }
+        public Vendedor Vendedor { get; set; }
 
-
-        public Venda(Guid idVendedor)
+        public Venda()
         {
-            listaItensVenda = new List<ItemVenda>();
+            if (Id == Guid.Empty)
+                Id = Guid.NewGuid();
 
-            Id = Guid.NewGuid();
-            IdVendedor = idVendedor;
+            if(listaItensVenda == null || listaItensVenda.Any())
+                listaItensVenda = new List<ItemVenda>();
+
             Data = DateTime.Now;
             StatusPedido = EnumStatusPedido.aguardandoPagamento;
-        }
-
-        public void AdicionarItensVenda(List<ItemVenda> listaItens)
-        {
-            listaItensVenda.AddRange(listaItens);
-        }
-
-        public void AdicionarVendedor(Vendedor vendedor)
-        {
-            Vendedor = vendedor;
         }
 
 

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using tech_test_payment_api.Models;
-using tech_test_payment_api.Repository;
-using tech_test_payment_api.Repository.Interfaces;
+using tech_test_payment_api.Services;
+using tech_test_payment_api.Services.Interfaces;
 
 namespace tech_test_payment_api.Controllers
 {
@@ -9,25 +9,25 @@ namespace tech_test_payment_api.Controllers
     [ApiController]
     public class VendedorController : ControllerBase
     {
-        static readonly IVendedorRepository repository = new VendedorRepository();
+        static readonly IVendedorService service = new VendedorService();
 
         [Route("ObterTodos"), HttpGet]
         public IEnumerable<Vendedor> ObterTodos()
         {
-            return repository.ObterTodos();
+            return service.ObterTodos();
         }
 
         [Route("ObterPorId"), HttpGet]
         public Vendedor ObterPorId(Guid id)
         {
-            var item = repository.Obter(id);
+            var item = service.Obter(id);
             return item;
         }
 
         [Route("Criar"), HttpPost]
         public Vendedor Criar([FromBody] Vendedor vendedor)
         {
-            vendedor = repository.Criar(vendedor);
+            vendedor = service.Criar(vendedor);
             return vendedor;
         }
 
@@ -35,7 +35,7 @@ namespace tech_test_payment_api.Controllers
         public string Atualizar(Guid id, Vendedor vendedor)
         {
             vendedor.Id = id;
-            if (!repository.Atualizar(vendedor))
+            if (!service.Atualizar(vendedor))
             {
                 return "Vendedor não foi alterado, verifique se o id do vendedor foi informado";
             }
@@ -46,13 +46,13 @@ namespace tech_test_payment_api.Controllers
         [Route("Excluir"), HttpDelete]
         public string Excluir(Guid id)
         {
-            Vendedor item = repository.Obter(id);
+            Vendedor item = service.Obter(id);
             if (item == null)
             {
                 return "Não foi localizado o vendedor com os parâmetros informados";
             }
 
-            repository.Excluir(id);
+            service.Excluir(id);
 
             return "Vendedor foi excluido com sucesso!";
         }

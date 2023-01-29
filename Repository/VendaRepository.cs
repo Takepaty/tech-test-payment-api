@@ -3,9 +3,8 @@ using tech_test_payment_api.Repository.Interfaces;
 
 namespace tech_test_payment_api.Repository
 {
-    public class VendaRepository : IVendaRepository
-    {
-        private List<Venda> bdVenda = new List<Venda>();
+    public class VendaRepository : BaseRepository, IVendaRepository
+    {        
 
         public bool Atualizar(Venda item)
         {
@@ -13,26 +12,26 @@ namespace tech_test_payment_api.Repository
             {
                 throw new ArgumentNullException("item");
             }
-            int index = bdVenda.FindIndex(v => v.Id == item.Id);
+            int index = BdVenda.FindIndex(v => v.Id == item.Id);
             if (index == -1)
             {
                 return false;
             }
-            bdVenda.RemoveAt(index);
-            bdVenda.Add(item);
+            BdVenda.RemoveAt(index);
+            BdVenda.Add(item);
             return true;        
         }
 
         public Venda Criar(Venda venda)
         {
-            bdVenda.Add(venda);
+            BdVenda.Add(venda);
 
             return venda;          
         }
 
         public void Excluir(Guid id)
         {
-            bdVenda.RemoveAll(v => v.Id == id);            
+            BdVenda.RemoveAll(v => v.Id == id);            
         }
 
         public Venda Obter(Guid id)
@@ -41,12 +40,12 @@ namespace tech_test_payment_api.Repository
             {
                 throw new ArgumentNullException("Identificador da venda informado não é válido");
             }
-            return bdVenda.Find(v => v.Id == id);
+            return BdVenda.Find(v => v.Id == id);
         }
 
         public IEnumerable<Venda> ObterTodos()
         {
-            return bdVenda;
+            return BdVenda;
         }
     }
 }
