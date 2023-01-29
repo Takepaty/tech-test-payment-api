@@ -8,7 +8,10 @@
 
         public Produto(string nome, decimal valor)
         {
-            Id = Guid.NewGuid();
+            if (Id == Guid.Empty)
+            {
+                Id = Guid.NewGuid();
+            }
             Nome = nome;
             Valor = valor;
         }

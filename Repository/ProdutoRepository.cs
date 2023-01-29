@@ -3,10 +3,8 @@ using tech_test_payment_api.Repository.Interfaces;
 
 namespace tech_test_payment_api.Repository
 {
-    public class ProdutoRepository : IProdutoRepository
+    public class ProdutoRepository : BaseRepository, IProdutoRepository
     {
-        private List<Produto> produto = new List<Produto>();
-
         public ProdutoRepository()
         {
             Criar(new Produto("Teclado",  1.39M));
@@ -20,28 +18,28 @@ namespace tech_test_payment_api.Repository
             {
                 throw new ArgumentNullException("item");
             }
-            if(produto.Any(p => p.Nome == item.Nome))
+            if(BdProduto.Any(p => p.Nome == item.Nome))
             {
                 throw new Exception("Este produto já foi cadastrado!");
             }
 
-            produto.Add(item);
+            BdProduto.Add(item);
             return item;
         }
 
         public IEnumerable<Produto> ObterTodos()
         {
-            return produto;
+            return BdProduto;
         }
 
         public Produto Obter(Guid id)
         {
-            return produto.Find(p => p.Id == id);
+            return BdProduto.Find(p => p.Id == id);
         }
 
         public void Excluir(Guid id)
         {
-            produto.RemoveAll(p => p.Id == id);
+            BdProduto.RemoveAll(p => p.Id == id);
         }
 
         public bool Atualizar(Produto item)
@@ -50,15 +48,14 @@ namespace tech_test_payment_api.Repository
             {
                 throw new ArgumentNullException("item");
             }
-            int index = produto.FindIndex(p => p.Id == item.Id);
+            int index = BdProduto.FindIndex(p => p.Id == item.Id);
             if (index == -1)
             {
                 return false;
             }
-            produto.RemoveAt(index);
-            produto.Add(item);
+            BdProduto.RemoveAt(index);
+            BdProduto.Add(item);
             return true;
         }
     }
-
 }
