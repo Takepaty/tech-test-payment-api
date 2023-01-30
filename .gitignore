@@ -5,3 +5,8 @@
 /.vs
 /obj
 /bin
+/obj/tech-test-payment-api.csproj.nuget.g.targets
+/obj/tech-test-payment-api.csproj.nuget.g.props
+/obj/tech-test-payment-api.csproj.nuget.dgspec.json
+/obj/project.nuget.cache
+/obj/project.assets.json
