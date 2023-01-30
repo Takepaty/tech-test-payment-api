@@ -5,3 +5,7 @@
 /.vs
 /obj
 /bin
+/tech-test-payment-api-unit-test/obj
+/tech-test-payment-api-unit-test/bin/Debug/net6.0
+/tech-test-payment-api/obj
+/tech-test-payment-api/bin/Debug/net6.0

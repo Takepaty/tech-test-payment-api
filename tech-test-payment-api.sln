@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tech-test-payment-api", "tech-test-payment-api.csproj", "{A4C68E46-0D43-4281-A52F-995BD44D9F1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tech-test-payment-api", "tech-test-payment-api\tech-test-payment-api.csproj", "{A4C68E46-0D43-4281-A52F-995BD44D9F1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tech-test-payment-api-unit-test", "..\tech-test-payment-api-unit-test\tech-test-payment-api-unit-test.csproj", "{47039F9B-E702-464C-93F5-844EEF96DFEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tech-test-payment-api-unit-test", "tech-test-payment-api-unit-test\tech-test-payment-api-unit-test.csproj", "{47039F9B-E702-464C-93F5-844EEF96DFEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,6 +7,13 @@
     <RootNamespace>tech_test_payment_api</RootNamespace>
   </PropertyGroup>
 
+  <!-- <ItemGroup> -->
+    <!-- <Compile Remove="tech-test-payment-api-unit-test\**" /> -->
+    <!-- <Content Remove="tech-test-payment-api-unit-test\**" /> -->
+    <!-- <EmbeddedResource Remove="tech-test-payment-api-unit-test\**" /> -->
+    <!-- <None Remove="tech-test-payment-api-unit-test\**" /> -->
+  <!-- </ItemGroup> -->
+
   <ItemGroup>
     <Compile Remove="Controllers\IVendaRepository.cs" />
     <Compile Remove="Repository\Interface.cs" />
@@ -14,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
