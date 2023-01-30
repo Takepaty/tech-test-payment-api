@@ -7,6 +7,7 @@ using tech_test_payment_api.Controllers;
 using tech_test_payment_api.ViewModel;
 using tech_test_payment_api.Models;
 using tech_test_payment_api.Models.Enums;
+using tech_test_payment_api.Util;
 
 namespace tech_test_payment_api_unit_test
 {
@@ -21,7 +22,7 @@ namespace tech_test_payment_api_unit_test
 
             //Criando vendedor para registrar a registrarVenda
             var vendedorController = new VendedorController();
-            var vendedor = vendedorController.Criar(new Vendedor("236.292.231-71", "Mauricio","mauricio@gmail.com", "(12) 99978-2458"));
+            var vendedor = vendedorController.Criar(new Vendedor(GeradorCpf.GerarCpf(), "Mauricio","mauricio@gmail.com", "(12) 99978-2458"));
             registrarVenda.IdVendedor = vendedor.Id;
 
             //Obtendo um produto para registrar a registrarVenda
@@ -51,9 +52,11 @@ namespace tech_test_payment_api_unit_test
 
             var vendaCriada = CriarVenda(vendaController);
 
-            var dadosVenda = new AtualizarVendaViewModel();
-            dadosVenda.IdVenda = vendaCriada.Id;
-            dadosVenda.StatusPedido = EnumStatusPedido.PagamentoAprovado;
+            var dadosVenda = new AtualizarVendaViewModel
+            {
+                IdVenda = vendaCriada.Id,
+                StatusPedido = EnumStatusPedido.PagamentoAprovado
+            };
 
             vendaController.AtualizarStatusVenda(dadosVenda);
 
@@ -63,9 +66,16 @@ namespace tech_test_payment_api_unit_test
             Assert.IsTrue(resultadoVenda.StatusPedido == EnumStatusPedido.PagamentoAprovado);
         }
 
+        [Test]
         public void Obter_QuandoIdExistente_RetornaVenda()
         {
             var vendaController = new VendaController();
+            var novaVenda = CriarVenda(vendaController);
+
+            var consultaVenda = vendaController.ObterPorId(novaVenda.Id);
+
+            Assert.IsNotNull(consultaVenda);
+            Assert.IsTrue(novaVenda.Id == consultaVenda.Id);
         }
 
         public Venda CriarVenda(VendaController vendaController)
@@ -74,7 +84,7 @@ namespace tech_test_payment_api_unit_test
 
             //Criando vendedor para registrar a registrarVenda
             var vendedorController = new VendedorController();
-            var vendedor = vendedorController.Criar(new Vendedor("232.232.232-71", "Luzia", "luzia@gmail.com", "(12) 99977-2458"));
+            var vendedor = vendedorController.Criar(new Vendedor(GeradorCpf.GerarCpf(), "Luzia", "luzia@gmail.com", "(12) 99977-2458"));
             registrarVenda.IdVendedor = vendedor.Id;
 
             //Obtendo um produto para registrar a registrarVenda
@@ -91,6 +101,6 @@ namespace tech_test_payment_api_unit_test
             registrarVenda.Items = listaItens;
 
             return vendaController.RegistrarVenda(registrarVenda);
-        }
+        }   
     }
 }
