@@ -25,7 +25,7 @@ namespace tech_test_payment_api.Controllers
         }
 
         [Route("Criar"), HttpPost]
-        public Vendedor Criar([FromBody] Vendedor vendedor)
+        public Vendedor Criar(Vendedor vendedor)
         {
             vendedor = service.Criar(vendedor);
             return vendedor;

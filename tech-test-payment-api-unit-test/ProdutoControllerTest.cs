@@ -90,5 +90,53 @@ namespace tech_test_payment_api_unit_test
             Assert.IsInstanceOf(typeof(int), ((tech_test_payment_api.Filters.MyCustomHttpException)expection).StatusCode);
             Assert.IsTrue(((tech_test_payment_api.Filters.MyCustomHttpException)expection).StatusCode == 400);
         }
+
+        [Test]
+        public void Excluir_QuandoIdExistir_RetornaMensagemSucesso()
+        {
+
+            var controller = new ProdutoController();
+            Produto produtoExperado;
+            string resultadoExclusao = "";
+            Exception exception = new Exception();
+
+            try
+            {
+                produtoExperado = controller.Criar(new Produto("Álcool em Gel", 10));
+                resultadoExclusao = controller.Excluir(produtoExperado.Id);
+                var resultadoConsulta = controller.ObterPorId(produtoExperado.Id);
+            }
+            catch (Exception ex)
+            {
+                exception = ex;
+            }
+
+            var statusCode = ((tech_test_payment_api.Filters.MyCustomHttpException)exception).StatusCode;
+
+            Assert.IsTrue(resultadoExclusao == "Produto foi excluido com sucesso!");
+            Assert.IsInstanceOf(typeof(int), statusCode);
+            Assert.IsTrue(statusCode == 400);
+
+        }
+
+        [Test]
+        public void Atualizar_QuandoIdExistir_RetornaMensagemSucesso()
+        {
+            var controller = new ProdutoController();
+            //Crio o novo vendedor
+            var produtoExperado = controller.Criar(new Produto("Caneta", 10));
+
+            //Alterando o telefone do novo vendedor
+            var produtoAtualizado = new Produto("Lapis", 1);
+
+            //Solicitando alteração do telefone
+            var resultadoAtualizacao = controller.Atualizar(produtoExperado.Id, produtoAtualizado);
+
+            //Consultando se foi alterado o telefone
+            produtoAtualizado = controller.ObterPorId(produtoExperado.Id);
+
+            Assert.IsTrue(resultadoAtualizacao == "Produto alterado com sucesso!");
+            Assert.AreNotEqual(produtoExperado.Nome, produtoAtualizado.Nome);
+        }
     }
 }
