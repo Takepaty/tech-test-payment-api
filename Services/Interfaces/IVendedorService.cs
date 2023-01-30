@@ -1,0 +1,13 @@
+﻿using tech_test_payment_api.Models;
+
+namespace tech_test_payment_api.Services.Interfaces
+{
+    public interface IVendedorService
+    {
+        IEnumerable<Vendedor> ObterTodos();
+        Vendedor Obter(Guid id);
+        Vendedor Criar(Vendedor item);
+        void Excluir(Guid id);
+        bool Atualizar(Vendedor item);
+    }
+}

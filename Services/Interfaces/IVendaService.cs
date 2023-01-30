@@ -5,7 +5,8 @@ namespace tech_test_payment_api.Services.Interfaces
 {
     public interface IVendaService
     {
-        Venda RegistrarVenda(RegistrarVendaViewModel venda);
+        Venda RegistrarVenda(RegistrarVendaViewModel vendaViewModel);
         Venda Obter(Guid id);
+        Venda Atualizar(AtualizarVendaViewModel vendaViewModel);
     }
 }

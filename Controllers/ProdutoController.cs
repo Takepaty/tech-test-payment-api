@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using tech_test_payment_api.Models;
-using tech_test_payment_api.Repository;
-using tech_test_payment_api.Repository.Interfaces;
+﻿using tech_test_payment_api.Models;
+using tech_test_payment_api.Services.Interfaces;
+using tech_test_payment_api.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace tech_test_payment_api.Controllers
 {
@@ -9,25 +9,25 @@ namespace tech_test_payment_api.Controllers
     [ApiController]
     public class ProdutoController : ControllerBase
     {
-        static readonly IProdutoRepository repository = new ProdutoRepository();
+        static readonly IProdutoService service = new ProdutoService();
 
         [Route("ObterTodos"), HttpGet]
         public IEnumerable<Produto> ObterTodos()
         {
-            return repository.ObterTodos();
+            return service.ObterTodos();
         }
 
         [Route("ObterPorId"), HttpGet]
         public Produto ObterPorId(Guid id)
         {
-            var item = repository.Obter(id);
+            var item = service.Obter(id);
             return item;
         }
 
         [Route("Criar"), HttpPost]
         public Produto Criar(Produto produto)
         {
-            produto = repository.Criar(produto);
+            produto = service.Criar(produto);
             return produto;
         }
 
@@ -35,7 +35,7 @@ namespace tech_test_payment_api.Controllers
         public string Atualizar(Guid id, Produto produto)
         {
             produto.Id = id;
-            if (!repository.Atualizar(produto))
+            if (!service.Atualizar(produto))
             {
                 return "Produto não foi alterado, verifique se o id do produto foi informado";
             }
@@ -46,14 +46,7 @@ namespace tech_test_payment_api.Controllers
         [Route("Excluir"), HttpDelete]
         public string Excluir(Guid id)
         {
-            Produto item = repository.Obter(id);
-            if (item == null)
-            {
-                return "Não foi localizado o produto com os parâmetros informados";
-            }
-
-            repository.Excluir(id);
-
+            service.Excluir(id);
             return "Produto foi excluido com sucesso!";
         }
     }
