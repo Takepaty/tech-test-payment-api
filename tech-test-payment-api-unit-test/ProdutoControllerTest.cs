@@ -10,13 +10,13 @@ namespace tech_test_payment_api_unit_test
         [Test]
         public void Criar_QuandoChamado_RetornaProdutoCriado()
         {
-            // Arrange
+            // Arranjo
             var controller = new ProdutoController();
 
-            // Act
+            // Agir
             var result = controller.Criar(new Produto("Notebook", 10));
 
-            // Assert
+            // Afirmar
             Assert.IsInstanceOf(typeof(Produto), result);
         }
 
@@ -73,15 +73,22 @@ namespace tech_test_payment_api_unit_test
         [Test]
         public void Criar_QuandoProdutoInvalido_RetornaBadRequestResult()
         {
-            // Arrange
-            var controller = new ProdutoController();
-            var produto = new Produto("", 10);
+            var expection = new Exception();
+            try
+            {
+                var controller = new ProdutoController();
+                var produto = new Produto("", 10);
 
-            // Act
-            var result = controller.Criar(produto);
+                var result = controller.Criar(produto);
+            }
+            catch (Exception ex)
+            {
+                expection = ex;
+            }
 
             // Assert
-            Assert.IsInstanceOf(typeof(Produto), result);
+            Assert.IsInstanceOf(typeof(int), ((tech_test_payment_api.Filters.MyCustomHttpException)expection).StatusCode);
+            Assert.IsTrue(((tech_test_payment_api.Filters.MyCustomHttpException)expection).StatusCode == 400);
         }
     }
 }
