@@ -31,7 +31,7 @@ namespace tech_test_payment_api.Services
         {
             try
             {
-                if (item == null)
+                if (item == null && string.IsNullOrEmpty(item.Nome))
                 {
                     throw new Exception("Informe os dados do produto!");
                 }

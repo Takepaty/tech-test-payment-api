@@ -28,6 +28,7 @@ namespace tech_test_payment_api.Filters
             });
 
             context.ExceptionHandled = true;
+            context.HttpContext.Response.StatusCode = errorCode;
         }
 
     }
