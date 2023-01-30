@@ -5,22 +5,18 @@ namespace tech_test_payment_api.Repository
 {
     public class VendedorRepository : IVendedorRepository
     {
-        private List<Vendedor> vendedor = new List<Vendedor>();
+        private List<Vendedor> bdVendedor = new List<Vendedor>();
 
-        public VendedorRepository()
-        {
-            Criar(new Vendedor("123.123.456-98","Fulano","teste@teste.com","1199999-9999"));
-            Criar(new Vendedor("123.123.456-97","Ciclano","teste_do_teste_que_estou_testando@teste.com","1199999-9999"));
-        }
+        public VendedorRepository(){}
 
         public IEnumerable<Vendedor> ObterTodos()
         {
-            return vendedor;
+            return bdVendedor;
         }
 
         public Vendedor Obter(Guid id)
         {
-            return vendedor.Find(v => v.Id == id);
+            return bdVendedor.Find(v => v.Id == id);
         }
 
         public Vendedor Criar(Vendedor item)
@@ -29,12 +25,12 @@ namespace tech_test_payment_api.Repository
             {
                 throw new ArgumentNullException("Favor informar os dados do vendedor!");
             }
-            if (vendedor.Any(v => v.Cpf == item.Cpf))
+            if (bdVendedor.Any(v => v.Cpf == item.Cpf))
             {
                 throw new ArgumentException("Cpf já cadastrado!");
             }
 
-            vendedor.Add(item);
+            bdVendedor.Add(item);
             return item;
         }
 
@@ -44,19 +40,19 @@ namespace tech_test_payment_api.Repository
             {
                 throw new ArgumentNullException("item");
             }
-            int index = vendedor.FindIndex(v => v.Id == item.Id);
+            int index = bdVendedor.FindIndex(v => v.Id == item.Id);
             if (index == -1)
             {
                 return false;
             }
-            vendedor.RemoveAt(index);
-            vendedor.Add(item);
+            bdVendedor.RemoveAt(index);
+            bdVendedor.Add(item);
             return true;
         }
 
         public void Excluir(Guid id)
         {
-            vendedor.RemoveAll(v => v.Id == id);
+            bdVendedor.RemoveAll(v => v.Id == id);
         }
     }
 }
