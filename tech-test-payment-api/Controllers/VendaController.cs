@@ -28,7 +28,7 @@ namespace tech_test_payment_api.Controllers
 
 
         [Route("AtualizarStatusVenda"), HttpPatch]
-        public Venda RegistrarVenda(AtualizarVendaViewModel venda)
+        public Venda AtualizarStatusVenda(AtualizarVendaViewModel venda)
         {
             return service.Atualizar(venda);
         }
