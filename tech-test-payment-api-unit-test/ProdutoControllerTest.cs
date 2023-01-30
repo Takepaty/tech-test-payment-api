@@ -23,27 +23,27 @@ namespace tech_test_payment_api_unit_test
         [Test]
         public void Obter_QuandoChamado_RetornaTodosOsProdutos()
         {
-            // Arrange
+            // Arranjo
             var controller = new ProdutoController();
 
-            // Act
+            // Agir
             var result = controller.ObterTodos();
 
-            // Assert
+            // Afirmar
             Assert.IsInstanceOf(typeof(List<Produto>), result.ToList());
         }
 
         [Test]
         public void Obter_QuandoIdExistente_RetornaProdutoCorrespondente()
         {
-            // Arrange
+            // Arranjo
             var controller = new ProdutoController();
             var produtoExperado = controller.Criar(new Produto("Livro", 10));
 
-            // Act
+            // Agir
             var result = controller.ObterPorId(produtoExperado.Id);
 
-            // Assert
+            // Afirmar
             Assert.IsInstanceOf(typeof(Produto), result);
             Assert.AreEqual(produtoExperado.Id, result.Id);
             Assert.AreEqual(produtoExperado.Nome, result.Nome);
@@ -52,11 +52,11 @@ namespace tech_test_payment_api_unit_test
         [Test]
         public void Obter_QuandoIdInexistente_RetornaNotFound()
         {
-            // Arrange
+            // Arranjo
             var controller = new ProdutoController();
 
             var expection = new Exception();
-            // Act
+            // Agir
             try
             {
                 var result = controller.ObterPorId(Guid.Empty);
@@ -66,7 +66,7 @@ namespace tech_test_payment_api_unit_test
                 expection = ex;
             }
 
-            // Assert
+            // Afirmar
             Assert.IsNotInstanceOf(typeof(BadRequestResult), ((tech_test_payment_api.Filters.MyCustomHttpException)expection).StatusCode);
         }
 
@@ -86,7 +86,7 @@ namespace tech_test_payment_api_unit_test
                 expection = ex;
             }
 
-            // Assert
+            // Afirmar
             Assert.IsInstanceOf(typeof(int), ((tech_test_payment_api.Filters.MyCustomHttpException)expection).StatusCode);
             Assert.IsTrue(((tech_test_payment_api.Filters.MyCustomHttpException)expection).StatusCode == 400);
         }

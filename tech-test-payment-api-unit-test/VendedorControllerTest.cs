@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,6 +49,29 @@ namespace tech_test_payment_api_unit_test
             Assert.IsNotNull(resultado);
             Assert.IsInstanceOf(typeof(Vendedor), resultado);
             Assert.IsTrue(resultado.Nome == "Jack");
+        
+        }
+
+        [Test]
+        public void Obter_QuandoIdInexistente_RetornaNotFound()
+        {
+            //Arranjo
+            var controller = new VendedorController();
+            var expection = new Exception();
+
+            //Agir
+            try
+            {
+                var resultado = controller.ObterPorId(Guid.Empty);
+            }
+            catch (Exception ex)
+            {
+                expection = ex;
+            }
+
+            //Afirmar
+            Assert.IsNotInstanceOf(typeof(BadRequestResult), ((tech_test_payment_api.Filters.MyCustomHttpException)expection).StatusCode);
+            Assert.IsTrue(((tech_test_payment_api.Filters.MyCustomHttpException)expection).StatusCode == 400);
         }
     }
 }
