@@ -14,15 +14,6 @@ namespace tech_test_payment_api.Repository
 
         public Produto Criar(Produto item)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
-            if(BdProduto.Any(p => p.Nome == item.Nome))
-            {
-                throw new Exception("Este produto já foi cadastrado!");
-            }
-
             BdProduto.Add(item);
             return item;
         }
@@ -44,10 +35,6 @@ namespace tech_test_payment_api.Repository
 
         public bool Atualizar(Produto item)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
             int index = BdProduto.FindIndex(p => p.Id == item.Id);
             if (index == -1)
             {

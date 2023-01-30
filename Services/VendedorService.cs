@@ -1,4 +1,6 @@
 ﻿using NPOI.SS.Formula.Functions;
+using System.Net;
+using tech_test_payment_api.Filters;
 using tech_test_payment_api.Models;
 using tech_test_payment_api.Repository;
 using tech_test_payment_api.Repository.Interfaces;
@@ -12,27 +14,63 @@ namespace tech_test_payment_api.Services
 
         public bool Atualizar(Vendedor item)
         {
-            return repository.Atualizar(item);
+            try
+            {
+                return repository.Atualizar(item);
+            }
+            catch (Exception ex)
+            {
+                throw new MyCustomHttpException((int)HttpStatusCode.BadRequest, $"Houve um erro ao atualizar o vendedor.", $"Detalhes técnicos: {ex.Message}");
+            }
         }
 
         public Vendedor Criar(Vendedor item)
         {
-            return repository.Criar(item);
+            try
+            {
+                return repository.Criar(item);
+            }
+            catch (Exception ex)
+            {
+                throw new MyCustomHttpException((int)HttpStatusCode.BadRequest, $"Houve um erro ao criar o vendedor.", $"Detalhes técnicos: {ex.Message}");
+            }
         }
 
         public void Excluir(Guid id)
         {
-            repository.Excluir(id);
+            try
+            {
+                repository.Excluir(id);
+            }
+            catch (Exception ex)
+            {
+                throw new MyCustomHttpException((int)HttpStatusCode.BadRequest, $"Houve um erro ao criar o vendedor.", $"Detalhes técnicos: {ex.Message}");
+            }
         }
 
         public Vendedor Obter(Guid id)
         {
-            return repository.Obter(id);
+            try
+            {
+                return repository.Obter(id);
+            }
+            catch (Exception ex)
+            {
+                throw new MyCustomHttpException((int)HttpStatusCode.BadRequest, $"Houve um erro ao obter o vendedor.", $"Detalhes técnicos: {ex.Message}");
+            }
         }
 
         public IEnumerable<Vendedor> ObterTodos()
         {
-            return repository.ObterTodos();
+            try
+            {
+                return repository.ObterTodos();
+            }
+            catch (Exception ex)
+            {
+                throw new MyCustomHttpException((int)HttpStatusCode.BadRequest, $"Houve um erro ao obter todos os vendedores.", $"Detalhes técnicos: {ex.Message}");
+            }
+            
         }
     }
 }

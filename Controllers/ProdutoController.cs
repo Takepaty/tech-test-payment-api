@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using tech_test_payment_api.Models;
+﻿using tech_test_payment_api.Models;
 using tech_test_payment_api.Services.Interfaces;
 using tech_test_payment_api.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace tech_test_payment_api.Controllers
 {
@@ -46,14 +46,7 @@ namespace tech_test_payment_api.Controllers
         [Route("Excluir"), HttpDelete]
         public string Excluir(Guid id)
         {
-            Produto item = service.Obter(id);
-            if (item == null)
-            {
-                return "Não foi localizado o produto com os parâmetros informados";
-            }
-
             service.Excluir(id);
-
             return "Produto foi excluido com sucesso!";
         }
     }
