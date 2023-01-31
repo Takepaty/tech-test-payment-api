@@ -43,6 +43,10 @@
     <img src="tech-test-payment-api-evidencias/1-testes-unitarios.png" />
     <br/>
 
+-   <b> Swagger Api </b>
+    <br/>
+    <img src="tech-test-payment-api-evidencias/0 - Swagger Api.png" />
+
 -   <b> Swagger Produto</b>
     <br/>
     <img src="tech-test-payment-api-evidencias/2-swagger-produto-todos.png" />
@@ -105,6 +109,22 @@
     <br/>
     <img src="tech-test-payment-api-evidencias/4.0 - swagger-venda-todos.png" />
 
-    -   Request e Response Excluir
+    -   Request do método Registrar Venda
         <br/>
-        <img src="tech-test-payment-api-evidencias/3.5 - swagger-vendedor-Excluir.png" />
+        <img src="tech-test-payment-api-evidencias/4.1 - swagger-venda-RegistrarVenda-Request.png" />
+
+    -   Response do método Registrar Venda
+        <br/>
+        <img src="tech-test-payment-api-evidencias/4.2 - swagger-venda-RegistrarVenda-Response.png" />
+
+    -   Request do método Atualizar Status Venda
+        <br/>
+        <img src="tech-test-payment-api-evidencias/4.3 - swagger-venda-AtualizarStatusVenda-Request.png" />
+
+    -   Response do método Atualizar Status Venda
+        <br/>
+        <img src="tech-test-payment-api-evidencias/4.4 - swagger-venda-AtualizarStatusVenda-Response.png" />
+
+    -   Response e Response do método Buscar Venda
+        <br/>
+        <img src="tech-test-payment-api-evidencias/4.5 - swagger-venda-BuscarVenda.png" />
