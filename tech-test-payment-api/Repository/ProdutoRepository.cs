@@ -7,9 +7,9 @@ namespace tech_test_payment_api.Repository
     {
         public ProdutoRepository()
         {
-            Criar(new Produto("Teclado",  1.39M));
+            Criar(new Produto("Teclado", 1.39M));
             Criar(new Produto("Mouse", 3.75M));
-            Criar(new Produto("Monitor",16.99M));
+            Criar(new Produto("Monitor", 16.99M));
         }
 
         public Produto Criar(Produto item)

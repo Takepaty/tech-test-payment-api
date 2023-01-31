@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace tech_test_payment_api.Models
+﻿namespace tech_test_payment_api.Models
 {
     public class ItemVenda
     {
@@ -18,6 +16,6 @@ namespace tech_test_payment_api.Models
         public int Quantidade { get; private set; }
 
         public Produto Produto { get; set; }
-        
+
     }
 }

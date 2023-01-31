@@ -40,14 +40,17 @@
 
 -   <b> Teste unitário</b>
     <br/>
+    <br/>
     <img src="tech-test-payment-api-evidencias/1-testes-unitarios.png" />
     <br/>
 
 -   <b> Swagger Api </b>
     <br/>
+    <br/>
     <img src="tech-test-payment-api-evidencias/0 - Swagger Api.png" />
 
 -   <b> Swagger Produto</b>
+    <br/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2-swagger-produto-todos.png" />
 
@@ -83,6 +86,7 @@
 
 -   <b> Swagger Vendedor</b>
     <br/>
+    <br/>
     <img src="tech-test-payment-api-evidencias/3.0 - swagger-vendedor-todos.png" />
 
     -   Request e Response Obter todos
@@ -106,6 +110,7 @@
         <img src="tech-test-payment-api-evidencias/3.5 - swagger-vendedor-Excluir.png" />
 
 -   <b> Swagger Vendas </b>
+    <br/>
     <br/>
     <img src="tech-test-payment-api-evidencias/4.0 - swagger-venda-todos.png" />
 

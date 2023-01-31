@@ -1,8 +1,8 @@
 ﻿using tech_test_payment_api.Controllers;
-using tech_test_payment_api.ViewModel;
 using tech_test_payment_api.Models;
 using tech_test_payment_api.Models.Enums;
 using tech_test_payment_api.Util;
+using tech_test_payment_api.ViewModel;
 
 namespace tech_test_payment_api_unit_test
 {
@@ -17,12 +17,12 @@ namespace tech_test_payment_api_unit_test
 
             //Criando vendedor para registrar a registrarVenda
             var vendedorController = new VendedorController();
-            var vendedor = vendedorController.Criar(new Vendedor(GeradorCpf.GerarCpf(), "Mauricio","mauricio@gmail.com", "(12) 99978-2458"));
+            var vendedor = vendedorController.Criar(new Vendedor(GeradorCpf.GerarCpf(), "Mauricio", "mauricio@gmail.com", "(12) 99978-2458"));
             registrarVenda.IdVendedor = vendedor.Id;
 
             //Obtendo um produto para registrar a registrarVenda
             var produtoController = new ProdutoController();
-            var produto = produtoController.Criar(new Produto("Caderno",15));
+            var produto = produtoController.Criar(new Produto("Caderno", 15));
 
             //Adiciono os dados do produto obtido
             var item = new RegistrarItemVendaViewModel { IdProduto = produto.Id, Quantidade = 12 };
@@ -96,6 +96,6 @@ namespace tech_test_payment_api_unit_test
             registrarVenda.Items = listaItens;
 
             return vendaController.RegistrarVenda(registrarVenda);
-        }   
+        }
     }
 }

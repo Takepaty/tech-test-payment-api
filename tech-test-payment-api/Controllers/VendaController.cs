@@ -1,8 +1,8 @@
+using Microsoft.AspNetCore.Mvc;
 using tech_test_payment_api.Models;
 using tech_test_payment_api.Services;
 using tech_test_payment_api.Services.Interfaces;
 using tech_test_payment_api.ViewModel;
-using Microsoft.AspNetCore.Mvc;
 
 namespace tech_test_payment_api.Controllers
 {

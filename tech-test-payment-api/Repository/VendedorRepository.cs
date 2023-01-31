@@ -7,7 +7,7 @@ namespace tech_test_payment_api.Repository
     {
         public VendedorRepository()
         {
-            if(BdVendedor == null || BdVendedor.Count <= 0)
+            if (BdVendedor == null || BdVendedor.Count <= 0)
             {
                 Criar(new Vendedor("123.123.456-98", "Fulano", "teste@teste.com", "1199999-9999"));
                 Criar(new Vendedor("123.123.456-97", "Ciclano", "teste_do_teste_que_estou_testando@teste.com", "1199999-9999"));
@@ -41,7 +41,7 @@ namespace tech_test_payment_api.Repository
 
         public bool Atualizar(Vendedor item)
         {
-            if(item == null)
+            if (item == null)
             {
                 throw new ArgumentNullException("item");
             }

@@ -1,15 +1,15 @@
-﻿using tech_test_payment_api.Repository.Interfaces;
-using tech_test_payment_api.Repository;
-using tech_test_payment_api.Services.Interfaces;
-using tech_test_payment_api.Models;
-using System.Net;
+﻿using System.Net;
 using tech_test_payment_api.Filters;
+using tech_test_payment_api.Models;
+using tech_test_payment_api.Repository;
+using tech_test_payment_api.Repository.Interfaces;
+using tech_test_payment_api.Services.Interfaces;
 
 namespace tech_test_payment_api.Services
 {
     public class ProdutoService : IProdutoService
     {
-        static readonly IProdutoRepository repository = new ProdutoRepository();        
+        static readonly IProdutoRepository repository = new ProdutoRepository();
 
         public bool Atualizar(Produto item)
         {
@@ -77,7 +77,7 @@ namespace tech_test_payment_api.Services
             }
             catch (Exception ex)
             {
-                throw new MyCustomHttpException((int)HttpStatusCode.BadRequest, $"Houve um erro ao tentar obter o produto.", $"Detalhes técnicos: { ex.Message }");
+                throw new MyCustomHttpException((int)HttpStatusCode.BadRequest, $"Houve um erro ao tentar obter o produto.", $"Detalhes técnicos: {ex.Message}");
             }
         }
 

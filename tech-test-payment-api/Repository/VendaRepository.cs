@@ -4,7 +4,7 @@ using tech_test_payment_api.Repository.Interfaces;
 namespace tech_test_payment_api.Repository
 {
     public class VendaRepository : BaseRepository, IVendaRepository
-    {        
+    {
 
         public bool Atualizar(Venda item)
         {
@@ -19,19 +19,19 @@ namespace tech_test_payment_api.Repository
             }
             BdVenda.RemoveAt(index);
             BdVenda.Add(item);
-            return true;        
+            return true;
         }
 
         public Venda Criar(Venda venda)
         {
             BdVenda.Add(venda);
 
-            return venda;          
+            return venda;
         }
 
         public void Excluir(Guid id)
         {
-            BdVenda.RemoveAll(v => v.Id == id);            
+            BdVenda.RemoveAll(v => v.Id == id);
         }
 
         public Venda Obter(Guid id)

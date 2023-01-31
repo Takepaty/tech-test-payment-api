@@ -5,12 +5,12 @@ namespace tech_test_payment_api.Models
     public class Venda
     {
 
-        public Guid Id { get; private set; }  
+        public Guid Id { get; private set; }
         public DateTime Data { get; private set; }
         public EnumStatusPedido StatusPedido { get; private set; }
         public decimal ValorTotal { get; set; }
 
-        public List<ItemVenda> listaItensVenda { get; private set; }        
+        public List<ItemVenda> listaItensVenda { get; private set; }
         public Vendedor Vendedor { get; set; }
 
         public Venda()
@@ -18,7 +18,7 @@ namespace tech_test_payment_api.Models
             if (Id == Guid.Empty)
                 Id = Guid.NewGuid();
 
-            if(listaItensVenda == null || listaItensVenda.Any())
+            if (listaItensVenda == null || listaItensVenda.Any())
                 listaItensVenda = new List<ItemVenda>();
 
             Data = DateTime.Now;

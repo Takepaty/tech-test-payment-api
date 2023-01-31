@@ -1,5 +1,4 @@
-﻿using NPOI.SS.Formula.Functions;
-using System.Net;
+﻿using System.Net;
 using tech_test_payment_api.Filters;
 using tech_test_payment_api.Models;
 using tech_test_payment_api.Repository;
@@ -55,7 +54,7 @@ namespace tech_test_payment_api.Services
                 var resultado = repository.Obter(id);
                 if (resultado == null || resultado.Id == default)
                     throw new Exception("Não foi localizado o vendedor com o identificador informado!");
-                
+
                 return resultado;
             }
             catch (Exception ex)
@@ -74,7 +73,7 @@ namespace tech_test_payment_api.Services
             {
                 throw new MyCustomHttpException((int)HttpStatusCode.BadRequest, $"Houve um erro ao obter todos os vendedores.", $"Detalhes técnicos: {ex.Message}");
             }
-            
+
         }
     }
 }
