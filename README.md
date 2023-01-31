@@ -38,6 +38,27 @@
 
 ## Evidências de funcionamento
 
--   Teste unitário
-<img src="tech-test-payment-api-evidencias/1-testes-unitarios.png" />
+### Teste unitário
 
+    <img src="tech-test-payment-api-evidencias/1-testes-unitarios.png" />
+
+### Swagger Produto
+
+    <img src="tech-test-payment-api-evidencias/2-swagger-produto-todos.png" />
+
+-   Request do método Criar
+    <img src="tech-test-payment-api-evidencias/2.1-swagger-produto-criar.png" />
+-   Response do método Criar
+    <img src="tech-test-payment-api-evidencias/2.2-swagger-produto-RetornoCriar.png" />
+-   Request e Response do método ObterTodos
+    <img src="tech-test-payment-api-evidencias/2.3-swagger-produto-ObterTodos.png" />
+-   Request e Response do método ObterPorId
+    <img src="tech-test-payment-api-evidencias/2.4-swagger-produto-ObterPorId.png" />
+-   Request do método Atualizar
+    <img src="tech-test-payment-api-evidencias/2.5-swagger-produto-Atualizar.png" />
+-   Response do método Atualizar
+    <img src="tech-test-payment-api-evidencias/2.6-swagger-produto-RetornoAtualizar.png" />
+-   Request e Response do método Excluir
+    <img src="tech-test-payment-api-evidencias/2.7-swagger-produto-Excluir.png" />
+
+### Swagger Vendedor
