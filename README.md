@@ -82,8 +82,8 @@
     <img src="tech-test-payment-api-evidencias/3.0 - swagger-vendedor-todos.png" />
 
 -   <h2> Request e Response Obter todos<h2/>
-    <br/>
     <img src="tech-test-payment-api-evidencias/3.1 - swagger-vendedor-ObterTodos.png" />
+    <br/>
 
 -   <h2> Request e Response Obter por Id<h2/>
     <br/>
