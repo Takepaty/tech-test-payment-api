@@ -38,40 +38,65 @@
 
 ## Evidências de funcionamento
 
--   Teste unitário
+   <h1> Teste unitário <h1/>
     <br/>
     <img src="tech-test-payment-api-evidencias/1-testes-unitarios.png" />
+    <br/>
 
--   Swagger Produto
+   <h1> Swagger Produto <h1/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2-swagger-produto-todos.png" />
 
--   Request do método Criar
+-   <h2> Request do método Criar <h2/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2.1-swagger-produto-criar.png" />
 
--   Response do método Criar
+-   <h2> Response do método Criar <h2/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2.2-swagger-produto-RetornoCriar.png" />
 
--   Request e Response do método ObterTodos
+-   <h2> Request e Response do método ObterTodos <h2/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2.3-swagger-produto-ObterTodos.png" />
 
--   Request e Response do método ObterPorId
+-   <h2> Request e Response do método ObterPorId <h2/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2.4-swagger-produto-ObterPorId.png" />
 
--   Request do método Atualizar
+-   <h2> Request do método Atualizar <h2/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2.5-swagger-produto-Atualizar.png" />
 
--   Response do método Atualizar
+-   <h2> Response do método Atualizar <h2/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2.6-swagger-produto-RetornoAtualizar.png" />
 
--   Request e Response do método Excluir
+-   <h2> Request e Response do método Excluir <h2/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2.7-swagger-produto-Excluir.png" />
+    <br/>
+    <br/>
 
--   Swagger Vendedor
+   <h1> Swagger Vendedor </h1>
+    <br/>
+    <img src="tech-test-payment-api-evidencias/3.0 - swagger-vendedor-todos.png" />
+
+-   <h2> Request e Response Obter todos<h2/>
+    <br/>
+    <img src="tech-test-payment-api-evidencias/3.1 - swagger-vendedor-ObterTodos.png" />
+
+-   <h2> Request e Response Obter por Id<h2/>
+    <br/>
+    <img src="tech-test-payment-api-evidencias/3.2 - swagger-vendedor-ObterPorId.png" />
+
+-   <h2> Request e Response Criar<h2/>
+    <br/>
+    <img src="tech-test-payment-api-evidencias/3.3 - swagger-vendedor-Criar.png" />
+
+-   <h2> Request e Response Atualizar<h2/>
+    <br/>
+    <img src="tech-test-payment-api-evidencias/3.4 - swagger-vendedor-Atualizar.png" />
+
+-   <h2> Request e Response Excluir<h2/>
+    <br/>
+    <img src="tech-test-payment-api-evidencias/3.5 - swagger-vendedor-Excluir.png" />
