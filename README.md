@@ -39,4 +39,5 @@
 ## Evidências de funcionamento
 
 -   Teste unitário
-![Teste unitário API](https://gitlab.com/paty.takehara/tech-test-payment-api/-/raw/d2f6e31e06813daa2df1503aa95877ab4bdcd94b/tech-test-payment-api-evidencias/1-testes-unitarios.png)
+<img src="tech-test-payment-api-evidencias/1-testes-unitarios.png" />
+
