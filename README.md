@@ -43,11 +43,14 @@
     <br/>
     <img src="tech-test-payment-api-evidencias/1-testes-unitarios.png" />
     <br/>
+    <br/>
 
 -   <b> Swagger Api </b>
     <br/>
     <br/>
     <img src="tech-test-payment-api-evidencias/0 - Swagger Api.png" />
+    <br/>
+    <br/>
 
 -   <b> Swagger Produto</b>
     <br/>
@@ -56,29 +59,36 @@
 
     -   Request do método Criar
         <br/>
+        <br/>
         <img src="tech-test-payment-api-evidencias/2.1-swagger-produto-criar.png" />
 
     -   Response do método Criar
+        <br/>
         <br/>
         <img src="tech-test-payment-api-evidencias/2.2-swagger-produto-RetornoCriar.png" />
 
     -   Request e Response do método ObterTodos
         <br/>
+        <br/>
         <img src="tech-test-payment-api-evidencias/2.3-swagger-produto-ObterTodos.png" />
 
     -   Request e Response do método ObterPorId
+        <br/>
         <br/>
         <img src="tech-test-payment-api-evidencias/2.4-swagger-produto-ObterPorId.png" />
 
     -   Request do método Atualizar
         <br/>
+        <br/>
         <img src="tech-test-payment-api-evidencias/2.5-swagger-produto-Atualizar.png" />
 
     -   Response do método Atualizar
         <br/>
+        <br/>
         <img src="tech-test-payment-api-evidencias/2.6-swagger-produto-RetornoAtualizar.png" />
 
     -   Request e Response do método Excluir
+        <br/>
         <br/>
         <img src="tech-test-payment-api-evidencias/2.7-swagger-produto-Excluir.png" />
         <br/>
@@ -90,24 +100,31 @@
     <img src="tech-test-payment-api-evidencias/3.0 - swagger-vendedor-todos.png" />
 
     -   Request e Response Obter todos
-        <img src="tech-test-payment-api-evidencias/3.1 - swagger-vendedor-ObterTodos.png" />
         <br/>
+        <br/>
+        <img src="tech-test-payment-api-evidencias/3.1 - swagger-vendedor-ObterTodos.png" />
 
     -   Request e Response Obter por Id
+        <br/>
         <br/>
         <img src="tech-test-payment-api-evidencias/3.2 - swagger-vendedor-ObterPorId.png" />
 
     -   Request e Response Criar
         <br/>
+        <br/>
         <img src="tech-test-payment-api-evidencias/3.3 - swagger-vendedor-Criar.png" />
 
     -   Request e Response Atualizar
+        <br/>
         <br/>
         <img src="tech-test-payment-api-evidencias/3.4 - swagger-vendedor-Atualizar.png" />
 
     -   Request e Response Excluir
         <br/>
+        <br/>
         <img src="tech-test-payment-api-evidencias/3.5 - swagger-vendedor-Excluir.png" />
+        <br/>
+        <br/>
 
 -   <b> Swagger Vendas </b>
     <br/>
@@ -116,20 +133,25 @@
 
     -   Request do método Registrar Venda
         <br/>
+        <br/>
         <img src="tech-test-payment-api-evidencias/4.1 - swagger-venda-RegistrarVenda-Request.png" />
 
     -   Response do método Registrar Venda
+        <br/>
         <br/>
         <img src="tech-test-payment-api-evidencias/4.2 - swagger-venda-RegistrarVenda-Response.png" />
 
     -   Request do método Atualizar Status Venda
         <br/>
+        <br/>
         <img src="tech-test-payment-api-evidencias/4.3 - swagger-venda-AtualizarStatusVenda-Request.png" />
 
     -   Response do método Atualizar Status Venda
         <br/>
+        <br/>
         <img src="tech-test-payment-api-evidencias/4.4 - swagger-venda-AtualizarStatusVenda-Response.png" />
 
     -   Response e Response do método Buscar Venda
+        <br/>
         <br/>
         <img src="tech-test-payment-api-evidencias/4.5 - swagger-venda-BuscarVenda.png" />
