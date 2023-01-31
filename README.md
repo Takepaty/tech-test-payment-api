@@ -38,12 +38,12 @@
 
 ## Evidências de funcionamento
 
-   <h1> Teste unitário <h1/>
+-   <b> Teste unitário <b/>
     <br/>
     <img src="tech-test-payment-api-evidencias/1-testes-unitarios.png" />
     <br/>
 
-   <h1> Swagger Produto <h1/>
+-   <b> Swagger Produto <b/>
     <br/>
     <img src="tech-test-payment-api-evidencias/2-swagger-produto-todos.png" />
 
@@ -77,7 +77,7 @@
     <br/>
     <br/>
 
-   <h1> Swagger Vendedor </h1>
+-   <b> Swagger Vendedor </h1>
     <br/>
     <img src="tech-test-payment-api-evidencias/3.0 - swagger-vendedor-todos.png" />
 
